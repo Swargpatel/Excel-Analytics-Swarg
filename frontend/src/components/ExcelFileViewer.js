@@ -19,7 +19,7 @@ import ThreeDChart from './ThreeDChart';
 import Footer from './Footer';
 import PdfDownload from './PdfDownload';
 import DataPreview from './DataPreview';
-// import ViewFile from './ViewFile';
+
 
 ChartJS.register(
     CategoryScale,
@@ -124,101 +124,7 @@ const ExcelFileViewer = () => {
     };
 
     return (
-        // <div>
-        //     {/* Content */}
-        //     <main className="p-8 space-y-10 pb-0 ">
-        //         {/* Upload */}
-        //         <section className="bg-white p-6 rounded-xl shadow-md border">
-        //             <h2 className="text-lg font-semibold text-indigo-700 mb-4">📁 Upload Excel File</h2>
-        //             <FileUpload onParsed={handleParsedData} />
-        //         </section>
-
-        //         {/* Chart Options */}
-        //         <section className="bg-white p-6 rounded-xl shadow-md border">
-        //             <h2 className="text-lg font-semibold text-indigo-700 mb-4">⚙️ Configure Chart</h2>
-        //             <div className="space-y-4">
-        //                 <select
-        //                     className="w-full border p-3 rounded-lg shadow focus:ring-2 focus:ring-indigo-300"
-        //                     value={selectedChart}
-        //                     onChange={(e) => setSelectedChart(e.target.value)}
-        //                 >
-        //                     <option value="bar">Bar Chart</option>
-        //                     <option value="line">Line Chart</option>
-        //                     <option value="pie">Pie Chart</option>
-        //                     <option value="scatter">Scatter Chart</option>
-        //                 </select>
-
-        //                 {columns.length > 0 && (
-        //                     <div className="flex flex-wrap gap-6">
-        //                         <div className="flex-1 min-w-[200px]">
-        //                             <label className="block mb-2 font-medium text-gray-700">X-Axis</label>
-        //                             <select
-        //                                 value={xAxis}
-        //                                 onChange={(e) => {
-        //                                     setXAxis(e.target.value);
-        //                                     updateChartData(e.target.value, yAxis);
-        //                                 }}
-        //                                 className="w-full border p-2 rounded-md shadow-sm"
-        //                             >
-        //                                 {columns.map((col, i) => <option key={i} value={col}>{col}</option>)}
-        //                             </select>
-        //                         </div>
-        //                         {selectedChart !== 'pie' && (
-        //                             <div className="flex-1 min-w-[200px]">
-        //                                 <label className="block mb-2 font-medium text-gray-700">Y-Axis</label>
-        //                                 <select
-        //                                     value={yAxis}
-        //                                     onChange={(e) => {
-        //                                         setYAxis(e.target.value);
-        //                                         updateChartData(xAxis, e.target.value);
-        //                                     }}
-        //                                     className="w-full border p-2 rounded-md shadow-sm"
-        //                                 >
-        //                                     {columns.map((col, i) => <option key={i} value={col}>{col}</option>)}
-        //                                 </select>
-        //                             </div>
-        //                         )}
-        //                     </div>
-        //                 )}
-        //             </div>
-        //         </section>
-
-        //         {/* Chart Section */}
-        //         <section className="bg-white p-6 rounded-xl shadow-md border">
-        //             <h2 className="text-lg font-semibold text-indigo-700 mb-4">📊 Chart Preview</h2>
-        //             <div id="myChart" >
-        //                 {renderChart()}
-        //             </div>
-        //             <button className="bg-indigo-600 text-white px-4 py-2 mt-2 rounded-xl shadow hover:bg-indigo-700 transition inline-flex items-center"
-        //                 onClick={handleDownload}>
-        //                 {/* Download */}
-
-        //                 <svg className="fill-current w-4 h-4 mr-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M13 8V2H7v6H2l8 8 8-8h-5zM0 18h20v2H0v-2z" /></svg>
-        //                 <span>Download</span>
-        //             </button>
-
-
-
-        //         </section>
-
-        //         {/* Excel Viewer */}
-        // <section className="bg-white p-6 rounded-xl shadow-md border">
-        //     <h2 className="text-lg font-semibold text-indigo-700 mb-4">📄 Excel Data Preview</h2>
-        //     {/* <ViewFile/> */}
-        // </section>
-
-        //         {/* 3D Placeholder */}
-        //         {/* <section className="bg-indigo-100 p-6 rounded-xl shadow-md flex items-center justify-center text-xl h-60">
-        //                 🌐 3D Charts Coming Soon
-        //                 <ThreeDChart />
-        //             </section> */}
-
-
-        //     </main>
-        //     <section className="w-full">
-        //         <Footer />
-        //     </section>
-        // </div>
+        
 
         <div >
 
