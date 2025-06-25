@@ -14,6 +14,7 @@ export default function FileUpload({ onParsed }) {
         try {
             const res = await API.post('/excel/upload', formData);
             console.log(res.data);
+            await localStorage.setItem('recordId', res.data.recordId);
             alert('File uploaded and parsed successfully!');
             if (onParsed) onParsed(res.data);
         } catch (err) {

@@ -16,6 +16,20 @@ const register = async (req, res) => {
     }
 };
 
+const registerAdmin = async (req, res) => {
+    const { name, email, password, } = req.body;
+    try {
+        const hash = await bcrypt.hash(password, 10);
+        const user = new User({ name, email, password: hash, role: 'admin' });
+        await user.save();
+    const token = jwt.sign({id: user._id, role: user.role}, process.env.JWT_SECRET);
+
+        res.status(200).json({status:200, token, data:user, message:'success'});
+    } catch (error) {
+        res.status(500).send('Registration failed');
+    }
+};
+
 const login = async (req, res) => {
     const { email, password } = req.body;
 
@@ -32,4 +46,5 @@ const login = async (req, res) => {
 module.exports = {
     register,
     login,
+    registerAdmin,
 };

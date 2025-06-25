@@ -10,6 +10,17 @@ const InsightsPage = () => {
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState('');
 
+    useEffect(() => {
+        const storedId = localStorage.getItem('recordId');
+        if (storedId) {
+            setId(storedId);
+        }
+    }, []);
+    
+    useEffect(() => {
+        if (id !== "") fetchInsights();
+    }, [id]);
+
     const fetchInsights = async () => {
         try {
             const res = await API.post('/insight/analyze', { recordId: id });
@@ -27,9 +38,6 @@ const InsightsPage = () => {
     }
     
 
-    useEffect(() => {
-        if (id !== "") fetchInsights();
-    }, [id]);
 
     return (
         
