@@ -52,6 +52,7 @@ router.post('/analyze', authMiddleware, async (req, res) => {
                             Given the following Excel data sample, provide:
                             1. Two smart, actionable insights from the data.
                             2. For each insight, suggest the most appropriate chart type (e.g., bar chart, line chart, pie chart, scatter plot etc.) and explain why that chart fits.
+                            give in short detail
 
                             Here is the data sample:
                             ${sampleData}`,

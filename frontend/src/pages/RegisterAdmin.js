@@ -78,7 +78,9 @@ const RegisterAdmin = ({Admin}) => {
                 >
                     Register
                 </button>
-                
+                <p className="text-center text-sm text-gray-500 mt-4">
+                    Already have an account? <a href="/admin/login" className="text-blue-600 hover:underline">Login</a>
+                </p>
 
                 {message && <p className="mt-4 text-center text-sm text-red-600">{message}</p>}
             </form>
