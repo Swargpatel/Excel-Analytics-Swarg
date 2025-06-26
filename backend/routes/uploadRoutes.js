@@ -62,6 +62,7 @@ router.post('/upload', verifyToken, upload.single('excel'), async (req, res) => 
 
         // Step 3: Save parsed data into MongoDB
         const newRecord = new ExcelRecord({
+
             data,
             uploadedBy: req.user._id // ✅ set by verifyToken middleware
         });
@@ -72,7 +73,8 @@ router.post('/upload', verifyToken, upload.single('excel'), async (req, res) => 
         res.status(201).json({
             message: 'File uploaded and saved',
             recordId: saved._id,
-            data
+            data,
+
         });
 
     } catch (error) {

@@ -21,8 +21,15 @@ router.get('/users', adminAuth, async (req, res) => {
     res.json(users);
 });
 
+
+
+
+// router.get('/records', adminAuth, async (req, res) => {
+//     const records = await ExcelRecord.find().populate('user', 'name email');
+//     res.json(records);
+// });
 router.get('/records', adminAuth, async (req, res) => {
-    const records = await ExcelRecord.find().populate('user', 'name email');
+    const records = await ExcelRecord.find().populate('data', 'uploadedBy uploadedAt');
     res.json(records);
 });
 

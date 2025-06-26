@@ -4,7 +4,7 @@ const express = require('express');
 const authMiddleware = require('../middlewares/auth.Middleware');
 const ExcelRecord = require('../models/ExcelRecord');
 const Insight = require('../models/Insight');
-const {GoogleGenAI} = require('@google/genai')
+const { GoogleGenAI } = require('@google/genai')
 
 
 const router = express.Router();
@@ -46,7 +46,15 @@ router.post('/analyze', authMiddleware, async (req, res) => {
         async function main() {
             const response = await ai.models.generateContent({
                 model: "gemini-2.5-flash",
-                contents: `You are data analyst. Give 3 actionable insights based on the following data: ${sampleData}`,
+                // contents: `You are data analyst. Give 3 actionable insights based on the following data: ${sampleData}`,
+                contents: `You are a professional data analyst.
+
+                            Given the following Excel data sample, provide:
+                            1. Two smart, actionable insights from the data.
+                            2. For each insight, suggest the most appropriate chart type (e.g., bar chart, line chart, pie chart, scatter plot etc.) and explain why that chart fits.
+
+                            Here is the data sample:
+                            ${sampleData}`,
             });
             console.log(response.text);
 

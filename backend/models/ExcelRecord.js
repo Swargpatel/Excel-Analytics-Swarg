@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
 
 const excelRecordSchema = new mongoose.Schema({
+    
     data: {
         type: Array,
         required: true
