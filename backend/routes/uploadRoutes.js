@@ -20,7 +20,6 @@ router.post('/upload', verifyToken, upload.single('excel'), async (req, res) => 
 
         // Step 3: Save parsed data into MongoDB
         const newRecord = new ExcelRecord({
-
             data,
             uploadedBy: req.user._id // ✅ set by verifyToken middleware
         });
